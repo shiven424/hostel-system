@@ -1,109 +1,135 @@
-# Hostel Grievance Redressal System
+# Hostel Mate Project
 
-## Overview
+Hostel Mate is a web application that allows students to request room allocations, and admins/wardens to manage and assign rooms based on availability and preferences. This project has a frontend built with React and a backend powered by Flask, connecting to a MongoDB database.
 
-The Hostel Grievance Redressal System is a web application that facilitates the submission, tracking, and resolution of grievances raised by hostel residents. The system provides a user-friendly interface for residents to report issues and for administrators to efficiently manage and resolve them.
+---
 
-## Features
+## Table of Contents
 
-- **User-friendly Interface**: Simple and intuitive design for easy grievance submission by residents.
-  
-- **Real-time Updates**: Residents receive real-time updates on the status of their submitted grievances.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+- [Running the Project](#running-the-project)
+- [Troubleshooting](#troubleshooting)
+- [Additional Resources](#additional-resources)
 
-- **Admin Dashboard**: An administrative dashboard to manage and prioritize grievances effectively.
+---
 
-## Technology Stack
+## Project Overview
 
-- **Frontend**: Built with React.js for a responsive and dynamic user interface. Styled using Tailwind CSS for a modern look and feel.
+The Hostel Mate application is designed to streamline room allocation processes for students, wardens, and administrators in hostel environments. 
 
-- **Backend**: Powered by Node.js and Express.js for server-side development.
+### Features
 
-- **Database**: Utilizes PostgreSQL for reliable and scalable data storage.
+- **Student Dashboard**: Students can submit room requests with preferences.
+- **Admin Dashboard**: Admins can view, approve, and assign hostels to students.
+- **Warden Dashboard**: Wardens can view requests for their hostel, approve/reject requests, and manage student room requests.
 
-## Styling with Tailwind CSS
+### Tech Stack
 
-The application's UI is styled using Tailwind CSS.
+- **Frontend**: React, Chakra UI
+- **Backend**: Flask, MongoDB
+- **Database**: MongoDB (Local or cloud instance)
 
-## Component Library
+---
 
-This project utilizes Component Library Preline, ComponentLand for cards, pages, and other components. 
+## Prerequisites
 
-## Project Preview
+Make sure the following software is installed before proceeding:
 
-### Login Page
+- **Node.js** (v12 or later): [Download Node.js](https://nodejs.org/)
+- **npm**: Comes with Node.js. Verify with `npm -v`.
+- **Python** (v3.8 or later): [Download Python](https://www.python.org/downloads/)
+- **pip**: Included with Python installation. Verify with `pip --version`.
+- **MongoDB**: Local instance or cloud database (e.g., MongoDB Atlas). [Download MongoDB](https://www.mongodb.com/try/download/community)
 
-![Login Page](./images/login(1).png)
+---
 
-### Signup Page
+## Project Structure
 
-![Signup Page](./images/signup(2).png)
+```bash
+├── backend/                    # Backend (Flask + MongoDB) 
+│ ├── main.py                   # Main Flask app 
+│ ├── database.py               # Database connection and functions 
+│ ├── collections_format.py     # Database connection and functions 
+│ └── requirements.txt          # Python dependencies 
+│ 
+└── frontend/                   # Frontend (React)
+ ├── src/                       # React source files 
+ │ ├── api/                     # API functions 
+ │ ├── components/              # UI components 
+ │ ├── pages/                   # React pages 
+ │ └── App.js                   # Main App component 
+ └── package.json               # Frontend dependencies
+```
 
-### Student Dashboard
+## Installing Dependencies
 
-![Student Dashboard](./images/studentDashboard(3).png)
+### 1. Clone the Repository
 
-### Student Profile Info
+First, clone the repository to your local machine:
 
-![Student Profile Info](./images/studentAccountInfo(9).png)
+```bash
+git clone https://github.com/your-username/hostel-mate.git
+cd hostel-mate
+```
+### Backend Setup
 
-### Student submitting complaint
+Navigate to the Backend Directory:
+```bash
+cd backend
+```
+Install Python Dependencies:
+```bash
+pip install -r requirements.txt
+```
+### Frontend Setup
 
-![Student Complaint submission](./images/createComplaint(4).png)
+Navigate to the Frontend Directory:
+```bash
+cd ../frontend
+```
+Install Node.js Dependencies:
+```bash
+npm install
+```
+## Running the Project
+After completing the backend and frontend setup:
 
-### Student Dashboard after submitting complaint
+### 1. Start the Backend Server
+From the backend directory, activate the virtual environment if necessary and start the Flask server:
+```bash
+python main.py
+```
+The backend server will start at http://127.0.0.1:5000.
 
-![Student Complaint](./images/studentComplaint(5).png)
+### 2. Start the Frontend Server
+Open a new terminal, navigate to the frontend directory, and run:
+```bash
+npm start
+```
+The frontend server will start at http://localhost:3000.
 
-### Warden Dashboard 
+Access the Application
+Once both servers are running, open http://localhost:3000 in your browser to access the application.
 
-![Warden Dashboard](./images/wardenDashboard(6).png)
+## Troubleshooting
 
-### Warden Resolves complaint(clicking Not completed changes to Completed)
+- **Module Not Found Errors:** Ensure all dependencies are installed with pip install -r requirements.txt (backend) and npm install (frontend).
+- **MongoDB Connection Issues:** Ensure MongoDB is running and MONGO_URI in .env is correct.
+- **CORS Issues:** If there are CORS errors, make sure the Flask CORS extension is configured properly in the backend.
+- **Environment Variable Issues:** Verify .env files are correctly set up and referenced in both frontend and backend.
 
-![warden Complaint](./images/wardenResolvedComplaint(7).png)
+## Additional Resources
+Flask Documentation
 
-### Student Dashboard Updated
+MongoDB Documentation
 
-![Student Dashboard Updated](./images/studentDashboardUpdated(8).png)
+React Documentation
 
-### Schema Diagram
-  
-![Entity Relationship Diagram](./images/hostelDatabaseErDiagram.png)
-
-## Getting Started
-
-To run the Hostel Grievance Redressal System locally:
-
-1. **Clone the repository:**
-    ```bash
-    git clone [repository_url]
-    ```
-
-2. **Navigate to the project directory:**
-    ```bash
-    cd [project_directory]
-    ```
-
-3. **Install dependencies:**
-    ```bash
-    npm install
-    ```
-
-4. **Configure the database:**
-    - Set up PostgreSQL and update the database configuration.
-    - For backend
-      ```bash
-      node server.js
-      ```
-  
-5. **Run the application:**
-    ```bash
-    npm run dev
-    ```
-
-## Contributing
-
-Contributions are welcome! 
-
-
-
+Chakra UI Documentation

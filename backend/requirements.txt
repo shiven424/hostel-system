@@ -1,0 +1,3 @@
+Flask==2.2.2              # Flask web framework
+Flask-Cors==3.0.10        # For handling CORS issues between frontend and backend
+pymongo==4.2.0            # MongoDB connection for Flask
